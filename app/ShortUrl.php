@@ -93,9 +93,8 @@ class ShortUrl extends Model
     {
         $url = static::checkCode($code);
         if (!empty($url)) {
-            if (preg_match('@^(?:http://|https://)?([^/]+)@i', $url->original_url) === 0) {
-                $url->original_url = 'http://' . $url->original_url;
-            }
+            $url->hits++;
+            $url->save();
 
             return $url->original_url;
         }
