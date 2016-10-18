@@ -2,6 +2,8 @@
 
 Yet another URL-shortener service
 
+[![Build Status](https://travis-ci.org/naffiq/qysqa.svg?branch=master)](https://travis-ci.org/naffiq/qysqa)
+
 ### About
 
 "Qysqa" translates as short from kazakh. This project is
