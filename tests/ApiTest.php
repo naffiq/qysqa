@@ -1,22 +1,12 @@
 <?php
 
-use Laravel\Lumen\Testing\DatabaseTransactions;
-
+/**
+ * Class ApiTest
+ *
+ * Contains tests for API service
+ */
 class ApiTest extends TestCase
 {
-    /**
-     * A basic test for main page acceptance.
-     *
-     * @return void
-     */
-    public function testIndex()
-    {
-        $this->get('/');
-
-        $this->assertResponseOk();
-    }
-
-
     /**
      * Testing shortening service
      *
@@ -29,6 +19,7 @@ class ApiTest extends TestCase
         $result = json_decode($this->response->getContent(), true);
 
         $this->assertArrayHasKey('result', $result);
+        $this->assertNotEquals(false, $result['result']);
     }
 
     /**
@@ -67,23 +58,5 @@ class ApiTest extends TestCase
         $secondJson = $this->response->getContent();
 
         $this->assertJsonStringEqualsJsonString($firstJson, $secondJson);
-    }
-
-    /**
-     * Testing getting URL by code
-     *
-     * @return void
-     */
-    public function testUnshorten()
-    {
-        $this->post('/shorten', ['url' => 'https://google.com']);
-
-        $result = json_decode($this->response->getContent(), true);
-        $resultCode = $result['result'];
-
-        $this->get("/{$resultCode}");
-
-        $this->assertResponseStatus(302);
-        $this->response->isRedirect('https://google.com');
     }
 }

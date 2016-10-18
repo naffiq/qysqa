@@ -3,6 +3,7 @@
 Yet another URL-shortener service
 
 [![Build Status](https://travis-ci.org/naffiq/qysqa.svg?branch=master)](https://travis-ci.org/naffiq/qysqa)
+[![Code Climate](https://codeclimate.com/github/naffiq/qysqa/badges/gpa.svg)](https://codeclimate.com/github/naffiq/qysqa)
 
 ### About
 
