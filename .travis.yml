@@ -13,3 +13,7 @@ before_script:
 
 script:
   - vendor/bin/phpunit
+  
+addons:
+    code_climate:
+        repo_token: 42798e02595b79acd26bda8f2fb6f5fc8567a6617933d2714ef5c94aab6509e5
